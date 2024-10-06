@@ -5,9 +5,11 @@ package org.openweatherapi.openweatherapi.Models;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Setter
 @Getter
-public class MainWeather {
+public class MainWeather implements Serializable {
     private double temp;
     private double feels_like;
     private double temp_min;

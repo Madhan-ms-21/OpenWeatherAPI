@@ -4,13 +4,14 @@ package org.openweatherapi.openweatherapi.Models;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 // WeatherResponse.java
 
 @Setter
 @Getter
-public class weatherInfo {
+public class weatherInfo implements Serializable {
     private Coordinates coord;
     private List<Weather> weather;
     private String base;

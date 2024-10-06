@@ -3,11 +3,12 @@ package org.openweatherapi.openweatherapi.Models;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Setter
 @Getter
-public class ListItem {
+public class ListItem implements Serializable {
     private long dt;
     private MainWeather main;
     private List<Weather> weather;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/api/weather")
@@ -27,7 +28,9 @@ public class Controller {
     @GetMapping("/forecast/{lat}/{longt}")
     public ResponseEntity<WeatherForecastResponse> getWeatherForecast(@PathVariable("lat") double lat, @PathVariable("longt")double longt) {
         WeatherForecastResponse weatherInfo = service.getForecastService(lat,longt);
+        RestTemplate restTemplate = new RestTemplate();
         return new ResponseEntity<>(weatherInfo, HttpStatusCode.valueOf(200));
+
     }
 
 }
